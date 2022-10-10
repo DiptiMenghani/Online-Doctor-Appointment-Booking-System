@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <?php 
+error_reporting(0);
 include('func.php');  
 include('newfunc.php');
 $con=mysqli_connect("localhost","root","","myhmsdb");
-
+if(isset($pid) || isset($username) || isset($email) || isset($fname) || isset($gender) || isset($lname) ){
 
   $pid = $_SESSION['pid'];
   $username = $_SESSION['username'];
@@ -14,7 +15,7 @@ $con=mysqli_connect("localhost","root","","myhmsdb");
   $contact = $_SESSION['contact'];
 
 
-
+}
 if(isset($_POST['app-submit']))
 {
   $pid = $_SESSION['pid'];
